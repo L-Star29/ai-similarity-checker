@@ -22,7 +22,12 @@ app = FastAPI(title="AI Similarity Checker")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://l-star29.github.io",
+        "https://l-star29.github.io/ai-similarity-checker",
+        "https://*.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

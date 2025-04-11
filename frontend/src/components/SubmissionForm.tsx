@@ -14,6 +14,7 @@ import {
 import { CloudUpload } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config';
 
 interface GradingConfig {
   similarity_threshold: number;
@@ -75,7 +76,7 @@ const SubmissionForm = () => {
 
     try {
       console.log('Sending request to backend...');
-      const response = await axios.post('http://localhost:8005/api/analyze', formData, {
+      const response = await axios.post(API_ENDPOINTS.analyze, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
